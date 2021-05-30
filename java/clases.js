@@ -173,7 +173,7 @@ while (numero !== 6 ){
 })();
 
 function jugar_loteria(){
-    var loteria = prompt("¿quieres jugar a la loteria?");
+    var loteria = prompt("¿quieres jugar a la loteria? respondi si/no");
     var loteria = loteria.toLocaleUpperCase();
 
 if (loteria == "SI" ){
