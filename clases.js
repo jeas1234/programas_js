@@ -192,3 +192,41 @@ else
     juego_loteria =document.getElementById("boton_loteria");
     juego_loteria.addEventListener("click", jugar_loteria);
 })();
+
+/* SISTEMA DE CUOTAS*/ 
+const total = parseInt(prompt("coloque la cantidad de dinero a solicitar"));
+const cantidadDeCuotas = parseInt(prompt("cuantas cuotas deseas pagarlo"));
+const final = total + iva(total) + interes(total);
+const resultadoFinal = cuotas(final, cantidadDeCuotas);
+
+
+ function interes(total){
+  const totalInteres = total *0.3;
+  return totalInteres;
+};
+  function iva (total){
+    const totalIva = total *0.22;
+    return totalIva;
+  };
+
+function cuotas (final, cantidadDeCuotas){
+  const totalCuotas = final / cantidadDeCuotas;
+  return totalCuotas; 
+}
+
+if (cantidadDeCuotas >= 1 && cantidadDeCuotas<=12){
+  if (total <= 0 ) { 
+    alert ("lo lamento debe colocar un monto mayor a 0");
+  }
+
+  alert ("el monto final de tu prestamo con interes e iva incluido es de " + final);
+  alert ("el monto a pagar por cada cuota es de " + resultadoFinal);
+}
+
+else if (cantidadDeCuotas > 12){
+  alert ("lo lamento no puede exceder de 12 cuotas")
+}
+else {
+  alert ("lo lamento debe colocar al menos una cuota");
+}
+
